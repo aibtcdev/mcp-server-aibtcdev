@@ -97,7 +97,7 @@ class AibtcdevMCPServer(FastMCP):
             """
             await ctx.debug(f"Creating DAO proposal with message: {message}")
 
-            arguments = {
+            arguments: Dict[str, Any] = {
                 "agent_account_contract": agent_account_contract,
                 "action_proposals_voting_extension": action_proposals_voting_extension,
                 "action_proposal_contract_to_execute": action_proposal_contract_to_execute,
@@ -128,7 +128,7 @@ class AibtcdevMCPServer(FastMCP):
             """
             await ctx.debug(f"Vetoing DAO proposal: {proposal_id}")
 
-            arguments = {
+            arguments: Dict[str, Any] = {
                 "dao_action_proposal_voting_contract": dao_action_proposal_voting_contract,
                 "proposal_id": proposal_id,
             }
@@ -168,7 +168,7 @@ class AibtcdevMCPServer(FastMCP):
             """
             await ctx.debug(f"Generating proposal recommendation for DAO: {dao_id}")
 
-            arguments = {"dao_id": dao_id}
+            arguments: Dict[str, Any] = {"dao_id": dao_id}
             if focus_area:
                 arguments["focus_area"] = focus_area
             if specific_needs:
@@ -201,7 +201,7 @@ class AibtcdevMCPServer(FastMCP):
                 f"Approving contract {contract_to_approve} for agent account {agent_account_contract}"
             )
 
-            arguments = {
+            arguments: Dict[str, Any] = {
                 "agent_account_contract": agent_account_contract,
                 "contract_to_approve": contract_to_approve,
             }
@@ -246,7 +246,7 @@ class AibtcdevMCPServer(FastMCP):
                 f"Running comprehensive evaluation for proposal: {proposal_id}"
             )
 
-            arguments = {"proposal_id": proposal_id}
+            arguments: Dict[str, Any] = {"proposal_id": proposal_id}
             if proposal_content:
                 arguments["proposal_content"] = proposal_content
             if dao_id:
