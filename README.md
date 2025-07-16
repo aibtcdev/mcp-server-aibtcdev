@@ -98,7 +98,7 @@ The server automatically uses authentication credentials from environment variab
    - Format: `Authorization: Bearer <token>`
    - Use for web applications and temporary access
 
-2. **API Key**: Long-lived authentication  
+2. **API Key**: Long-lived authentication
    - Environment variable: `AIBTC_API_KEY`
    - Format: `X-API-Key: <key>`
    - Use for programmatic access and bots
